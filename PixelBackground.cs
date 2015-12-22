@@ -6,16 +6,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace PixelBackgroundGenerator
 {
 	public class PixelBackground
 	{
-		int _x = 0;
-		int _y = 0;
+		int _x, _y;
 		private readonly HashSet<Color> _colors = new HashSet<Color>();
+		private Color _borderColor = Color.Black;
 		private Bitmap _background;
 		int _squareSize = 1;
+		int _borderSize = 1;
 
 		/// <summary>
 		/// Constructor that takes two integers as dimensions.
@@ -43,6 +45,16 @@ namespace PixelBackgroundGenerator
 			get { return _squareSize; }
 			set { _squareSize = value; }
 		}
+		public int BorderSize
+		{
+			get { return _borderSize; }
+			set { _borderSize = value; }
+		}
+		public Color BorderColor
+		{
+			get { return _borderColor; }
+			set { _borderColor = value; }
+		}
 
 		// If the user for some reason wants access to our colors,
 		// they shouldn't be able to directly edit it.
@@ -58,6 +70,16 @@ namespace PixelBackgroundGenerator
 		public void AddColor(Color color)
 		{
 			_colors.Add(color);
+		}
+
+		public void RemoveColor(Color color)
+		{
+			_colors.Remove(color);
+		}
+
+		public void ResetColors()
+		{
+			_colors.Clear();
 		}
 
 		public void SetImageSize(int x, int y)
@@ -84,7 +106,19 @@ namespace PixelBackgroundGenerator
 					Color pixelColor = colors[r.Next(colors.Length)];
 					// Based off of the color, fill our image with a rectangle of size 
 					using (Graphics g = Graphics.FromImage(_background))
-						g.FillRectangle(new SolidBrush(pixelColor), new Rectangle(x, y, _squareSize, _squareSize));
+					{
+						Rectangle rectangle = new Rectangle(x, y, _squareSize, _squareSize);
+						g.FillRectangle(new SolidBrush(pixelColor), rectangle);
+
+						// Turns out if the width is set to 0, it defaults to 1.
+						if (_borderSize != 0)
+						{
+							// Taken from stackoverflow
+							Pen pen = new Pen(_borderColor, _borderSize);
+							pen.Alignment = PenAlignment.Inset; //<-- this
+							g.DrawRectangle(pen, rectangle);
+						}
+					}
 				}
 			}
 		}

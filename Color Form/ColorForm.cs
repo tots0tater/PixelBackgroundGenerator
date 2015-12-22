@@ -12,16 +12,16 @@ namespace PixelBackgroundGenerator
 {
 	public partial class ColorForm : Form
 	{
-		private PixelBackground _pb;
+		private PixelBackground _pixelBackground;
 
-		public ColorForm(PixelBackground pb)
+		public ColorForm(PixelBackground pixelBackground)
 		{
 			InitializeComponent();
-			_pb = pb;
+			_pixelBackground = pixelBackground;
 
 			// Setting our color box with colors we already have.
 			int i = 0;
-			foreach (Color c in _pb.Colors)
+			foreach (Color c in _pixelBackground.Colors)
 				colorPanel.Controls[i++].BackColor = c;
 
 			foreach (Control c in colorPanel.Controls)
@@ -37,6 +37,7 @@ namespace PixelBackgroundGenerator
 
 		private void ColorButtonContextMenu_Click(object sender, EventArgs e, Button button)
 		{
+			_pixelBackground.RemoveColor(button.BackColor);
 			button.BackColor = Color.Transparent;
 		}
 
@@ -51,7 +52,7 @@ namespace PixelBackgroundGenerator
 		{
 			foreach (Control c in colorPanel.Controls)
 				if (c.BackColor != Color.Transparent)
-					_pb.AddColor(c.BackColor);
+					_pixelBackground.AddColor(c.BackColor);
 
 			this.Close();
 		}
@@ -60,6 +61,8 @@ namespace PixelBackgroundGenerator
 		{
 			foreach (Control c in colorPanel.Controls)
 				c.BackColor = Color.Transparent;
+
+			_pixelBackground.ResetColors();
 		}
 	}
 }

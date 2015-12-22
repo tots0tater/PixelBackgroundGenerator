@@ -74,7 +74,7 @@
 			this.color1Button.Location = new System.Drawing.Point(3, 3);
 			this.color1Button.Name = "color1Button";
 			this.color1Button.Size = new System.Drawing.Size(35, 35);
-			this.color1Button.TabIndex = 7;
+			this.color1Button.TabIndex = 0;
 			this.color1Button.UseVisualStyleBackColor = false;
 			this.color1Button.Click += new System.EventHandler(this.colorButton_Click);
 			// 
@@ -86,7 +86,7 @@
 			this.color2Button.Location = new System.Drawing.Point(44, 3);
 			this.color2Button.Name = "color2Button";
 			this.color2Button.Size = new System.Drawing.Size(35, 35);
-			this.color2Button.TabIndex = 9;
+			this.color2Button.TabIndex = 1;
 			this.color2Button.UseVisualStyleBackColor = false;
 			this.color2Button.Click += new System.EventHandler(this.colorButton_Click);
 			// 
@@ -98,7 +98,7 @@
 			this.color3Button.Location = new System.Drawing.Point(85, 3);
 			this.color3Button.Name = "color3Button";
 			this.color3Button.Size = new System.Drawing.Size(35, 35);
-			this.color3Button.TabIndex = 11;
+			this.color3Button.TabIndex = 2;
 			this.color3Button.UseVisualStyleBackColor = false;
 			this.color3Button.Click += new System.EventHandler(this.colorButton_Click);
 			// 
@@ -110,7 +110,7 @@
 			this.color4Button.Location = new System.Drawing.Point(126, 3);
 			this.color4Button.Name = "color4Button";
 			this.color4Button.Size = new System.Drawing.Size(35, 35);
-			this.color4Button.TabIndex = 13;
+			this.color4Button.TabIndex = 3;
 			this.color4Button.UseVisualStyleBackColor = false;
 			this.color4Button.Click += new System.EventHandler(this.colorButton_Click);
 			// 
@@ -122,7 +122,7 @@
 			this.color5Button.Location = new System.Drawing.Point(167, 3);
 			this.color5Button.Name = "color5Button";
 			this.color5Button.Size = new System.Drawing.Size(35, 35);
-			this.color5Button.TabIndex = 15;
+			this.color5Button.TabIndex = 4;
 			this.color5Button.UseVisualStyleBackColor = false;
 			this.color5Button.Click += new System.EventHandler(this.colorButton_Click);
 			// 
@@ -134,7 +134,7 @@
 			this.color6Button.Location = new System.Drawing.Point(208, 3);
 			this.color6Button.Name = "color6Button";
 			this.color6Button.Size = new System.Drawing.Size(35, 35);
-			this.color6Button.TabIndex = 17;
+			this.color6Button.TabIndex = 5;
 			this.color6Button.UseVisualStyleBackColor = false;
 			this.color6Button.Click += new System.EventHandler(this.colorButton_Click);
 			// 
@@ -146,7 +146,7 @@
 			this.color7Button.Location = new System.Drawing.Point(3, 42);
 			this.color7Button.Name = "color7Button";
 			this.color7Button.Size = new System.Drawing.Size(35, 35);
-			this.color7Button.TabIndex = 8;
+			this.color7Button.TabIndex = 6;
 			this.color7Button.UseVisualStyleBackColor = false;
 			this.color7Button.Click += new System.EventHandler(this.colorButton_Click);
 			// 
@@ -158,7 +158,7 @@
 			this.color8Button.Location = new System.Drawing.Point(44, 42);
 			this.color8Button.Name = "color8Button";
 			this.color8Button.Size = new System.Drawing.Size(35, 35);
-			this.color8Button.TabIndex = 10;
+			this.color8Button.TabIndex = 7;
 			this.color8Button.UseVisualStyleBackColor = false;
 			this.color8Button.Click += new System.EventHandler(this.colorButton_Click);
 			// 
@@ -170,7 +170,7 @@
 			this.color9Button.Location = new System.Drawing.Point(85, 42);
 			this.color9Button.Name = "color9Button";
 			this.color9Button.Size = new System.Drawing.Size(35, 35);
-			this.color9Button.TabIndex = 12;
+			this.color9Button.TabIndex = 8;
 			this.color9Button.UseVisualStyleBackColor = false;
 			this.color9Button.Click += new System.EventHandler(this.colorButton_Click);
 			// 
@@ -182,7 +182,7 @@
 			this.color10Button.Location = new System.Drawing.Point(126, 42);
 			this.color10Button.Name = "color10Button";
 			this.color10Button.Size = new System.Drawing.Size(35, 35);
-			this.color10Button.TabIndex = 14;
+			this.color10Button.TabIndex = 9;
 			this.color10Button.UseVisualStyleBackColor = false;
 			this.color10Button.Click += new System.EventHandler(this.colorButton_Click);
 			// 
@@ -194,7 +194,7 @@
 			this.color11Button.Location = new System.Drawing.Point(167, 42);
 			this.color11Button.Name = "color11Button";
 			this.color11Button.Size = new System.Drawing.Size(35, 35);
-			this.color11Button.TabIndex = 16;
+			this.color11Button.TabIndex = 10;
 			this.color11Button.UseVisualStyleBackColor = false;
 			this.color11Button.Click += new System.EventHandler(this.colorButton_Click);
 			// 
@@ -206,7 +206,7 @@
 			this.color12Button.Location = new System.Drawing.Point(208, 42);
 			this.color12Button.Name = "color12Button";
 			this.color12Button.Size = new System.Drawing.Size(35, 35);
-			this.color12Button.TabIndex = 18;
+			this.color12Button.TabIndex = 11;
 			this.color12Button.UseVisualStyleBackColor = false;
 			this.color12Button.Click += new System.EventHandler(this.colorButton_Click);
 			// 
@@ -217,7 +217,7 @@
 			this.submitColorsButton.Location = new System.Drawing.Point(63, 83);
 			this.submitColorsButton.Name = "submitColorsButton";
 			this.submitColorsButton.Size = new System.Drawing.Size(117, 23);
-			this.submitColorsButton.TabIndex = 1;
+			this.submitColorsButton.TabIndex = 12;
 			this.submitColorsButton.Text = "Submit Colors";
 			this.submitColorsButton.UseVisualStyleBackColor = false;
 			this.submitColorsButton.Click += new System.EventHandler(this.submitColorsButton_Click);
@@ -229,7 +229,7 @@
 			this.resetButton.Location = new System.Drawing.Point(195, 83);
 			this.resetButton.Name = "resetButton";
 			this.resetButton.Size = new System.Drawing.Size(48, 23);
-			this.resetButton.TabIndex = 2;
+			this.resetButton.TabIndex = 13;
 			this.resetButton.Text = "Reset";
 			this.resetButton.UseVisualStyleBackColor = false;
 			this.resetButton.Click += new System.EventHandler(this.resetButton_Click);

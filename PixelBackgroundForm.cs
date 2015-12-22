@@ -12,45 +12,54 @@ namespace PixelBackgroundGenerator
 {
 	public partial class PixelBackgroundForm : Form
 	{
-		private PixelBackground _pb = new PixelBackground(1, 1);
+		private PixelBackground _pixelBackground = new PixelBackground(1, 1);
 
 		public PixelBackgroundForm()
 		{
 			InitializeComponent();
 		}
 
-		private void generateButton_Click(object sender, EventArgs e)
-		{
-			_pb.SetImageSize((int)xUpDown.Value, (int)yUpDown.Value);
-			_pb.SquareSize = (int)squareSizeNumericUpDown.Value;
-			_pb.Generate();
-			new ImageForm(_pb.Background).Show();
-		}
-
 		private void chooseColorsButton_Click(object sender, EventArgs e)
 		{
-			ColorForm cf = new ColorForm(_pb);
+			ColorForm cf = new ColorForm(_pixelBackground);
 			cf.Show();
 			
 			// An event to re-enable our choose colors button
 			cf.FormClosed += Cf_FormClosed;
-			chooseColorsButton.Enabled = false;
+			imageColorsButton.Enabled = false;
 		}
 
 		private void Cf_FormClosed(object sender, FormClosedEventArgs e)
 		{
-			chooseColorsButton.Enabled = true;
-			generateButton.Enabled = (_pb.Colors.Count > 0) ? true : false;
+			imageColorsButton.Enabled = true;
+			generateButton.Enabled = (_pixelBackground.Colors.Count > 0) ? true : false;
 		}
 
-		// Utility methods for highlighting the upDown objects
-		private void xUpDown_Enter(object sender, EventArgs e)
+		private void generateButton_Click(object sender, EventArgs e)
 		{
-			xUpDown.Select(0, xUpDown.Text.Length);
+			_pixelBackground.SetImageSize((int)xUpDown.Value, (int)yUpDown.Value);
+			_pixelBackground.SquareSize = (int)squareSizeNumericUpDown.Value;
+			_pixelBackground.BorderSize = (int)borderSizeNumericUpDown.Value;
+			_pixelBackground.Generate();
+
+			new ImageForm(_pixelBackground.Background).Show();
 		}
-		private void yUpDown_Enter(object sender, EventArgs e)
+
+		private void borderColorButton_Click(object sender, EventArgs e)
 		{
-			yUpDown.Select(0, xUpDown.Text.Length);
+			ColorDialog cd = new ColorDialog();
+			if (cd.ShowDialog() == DialogResult.OK)
+			{
+				borderColorButton.BackColor = cd.Color;
+				_pixelBackground.BorderColor = cd.Color;
+			}
+		}
+
+		// Utility method for highlighting the upDown objects
+		private void borderSizeNumericUpDown_Enter(object sender, EventArgs e)
+		{
+			NumericUpDown upDown = sender as NumericUpDown;
+			upDown.Select(0, upDown.Text.Length);
 		}
 	}
 }
