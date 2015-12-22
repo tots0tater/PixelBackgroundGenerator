@@ -33,8 +33,7 @@
 			this.yUpDown = new System.Windows.Forms.NumericUpDown();
 			this.xLabel = new System.Windows.Forms.Label();
 			this.yLabel = new System.Windows.Forms.Label();
-			this.addColorButton = new System.Windows.Forms.Button();
-			this.colorButton = new System.Windows.Forms.Button();
+			this.chooseColorsButton = new System.Windows.Forms.Button();
 			this.squareSizeNumericUpDown = new System.Windows.Forms.NumericUpDown();
 			this.squareSizeLabel = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.xUpDown)).BeginInit();
@@ -117,28 +116,15 @@
 			this.yLabel.TabIndex = 4;
 			this.yLabel.Text = "Y:";
 			// 
-			// addColorButton
+			// chooseColorsButton
 			// 
-			this.addColorButton.Enabled = false;
-			this.addColorButton.Location = new System.Drawing.Point(80, 86);
-			this.addColorButton.Name = "addColorButton";
-			this.addColorButton.Size = new System.Drawing.Size(89, 23);
-			this.addColorButton.TabIndex = 5;
-			this.addColorButton.Text = "Add Color";
-			this.addColorButton.UseVisualStyleBackColor = true;
-			this.addColorButton.Click += new System.EventHandler(this.addColorButton_Click);
-			// 
-			// colorButton
-			// 
-			this.colorButton.BackColor = System.Drawing.Color.Transparent;
-			this.colorButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.colorButton.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.colorButton.Location = new System.Drawing.Point(184, 86);
-			this.colorButton.Name = "colorButton";
-			this.colorButton.Size = new System.Drawing.Size(26, 23);
-			this.colorButton.TabIndex = 6;
-			this.colorButton.UseVisualStyleBackColor = false;
-			this.colorButton.Click += new System.EventHandler(this.colorButton_Click);
+			this.chooseColorsButton.Location = new System.Drawing.Point(80, 86);
+			this.chooseColorsButton.Name = "chooseColorsButton";
+			this.chooseColorsButton.Size = new System.Drawing.Size(130, 23);
+			this.chooseColorsButton.TabIndex = 5;
+			this.chooseColorsButton.Text = "Choose Colors";
+			this.chooseColorsButton.UseVisualStyleBackColor = true;
+			this.chooseColorsButton.Click += new System.EventHandler(this.chooseColorsButton_Click);
 			// 
 			// squareSizeNumericUpDown
 			// 
@@ -178,8 +164,7 @@
 			this.ClientSize = new System.Drawing.Size(284, 150);
 			this.Controls.Add(this.squareSizeLabel);
 			this.Controls.Add(this.squareSizeNumericUpDown);
-			this.Controls.Add(this.colorButton);
-			this.Controls.Add(this.addColorButton);
+			this.Controls.Add(this.chooseColorsButton);
 			this.Controls.Add(this.yLabel);
 			this.Controls.Add(this.xLabel);
 			this.Controls.Add(this.yUpDown);
@@ -204,8 +189,7 @@
 		private System.Windows.Forms.NumericUpDown yUpDown;
 		private System.Windows.Forms.Label xLabel;
 		private System.Windows.Forms.Label yLabel;
-		private System.Windows.Forms.Button addColorButton;
-		private System.Windows.Forms.Button colorButton;
+		private System.Windows.Forms.Button chooseColorsButton;
 		private System.Windows.Forms.NumericUpDown squareSizeNumericUpDown;
 		private System.Windows.Forms.Label squareSizeLabel;
 	}

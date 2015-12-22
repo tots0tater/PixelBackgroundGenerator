@@ -12,7 +12,6 @@ namespace PixelBackgroundGenerator
 {
 	public partial class PixelBackgroundForm : Form
 	{
-		private Color _currentColor = new Color();
 		private PixelBackground _pb = new PixelBackground(1, 1);
 
 		public PixelBackgroundForm()
@@ -28,23 +27,20 @@ namespace PixelBackgroundGenerator
 			new ImageForm(_pb.Background).Show();
 		}
 
-		private void colorButton_Click(object sender, EventArgs e)
+		private void chooseColorsButton_Click(object sender, EventArgs e)
 		{
-			ColorDialog cd = new ColorDialog();
-			if (cd.ShowDialog() == DialogResult.OK)
-			{
-				colorButton.BackColor = cd.Color;
-				_currentColor = cd.Color;
-
-				// Only enabled after we add a color
-				addColorButton.Enabled = true;
-			}
+			ColorForm cf = new ColorForm(_pb);
+			cf.Show();
+			
+			// An event to re-enable our choose colors button
+			cf.FormClosed += Cf_FormClosed;
+			chooseColorsButton.Enabled = false;
 		}
 
-		private void addColorButton_Click(object sender, EventArgs e)
+		private void Cf_FormClosed(object sender, FormClosedEventArgs e)
 		{
-			_pb.AddColor(_currentColor);
-			generateButton.Enabled = true;
+			chooseColorsButton.Enabled = true;
+			generateButton.Enabled = (_pb.Colors.Count > 0) ? true : false;
 		}
 
 		// Utility methods for highlighting the upDown objects
