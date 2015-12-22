@@ -45,7 +45,11 @@ namespace PixelBackgroundGenerator
 		{
 			ColorDialog cd = new ColorDialog();
 			if (cd.ShowDialog() == DialogResult.OK)
+			{
+				// In case they want to replace a color they're on
+				_pixelBackground.RemoveColor((sender as Button).BackColor);
 				(sender as Button).BackColor = cd.Color;
+			}
 		}
 
 		private void submitColorsButton_Click(object sender, EventArgs e)

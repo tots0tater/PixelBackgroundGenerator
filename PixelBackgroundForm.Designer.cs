@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PixelBackgroundForm));
 			this.generateButton = new System.Windows.Forms.Button();
 			this.xUpDown = new System.Windows.Forms.NumericUpDown();
 			this.yUpDown = new System.Windows.Forms.NumericUpDown();
@@ -256,6 +257,7 @@
 			this.Controls.Add(this.resolutionGroupBox);
 			this.Controls.Add(this.generateButton);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.Name = "PixelBackgroundForm";
 			this.Text = "Pixel Background";
