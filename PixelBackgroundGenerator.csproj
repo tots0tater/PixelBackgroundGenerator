@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ColorForm.cs">
+    <Compile Include="Color Form\ColorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ColorForm.Designer.cs">
+    <Compile Include="Color Form\ColorForm.Designer.cs">
       <DependentUpon>ColorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImageForm.cs">
+    <Compile Include="Image Form\ImageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ImageForm.Designer.cs">
+    <Compile Include="Image Form\ImageForm.Designer.cs">
       <DependentUpon>ImageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PixelBackground.cs" />
@@ -67,10 +67,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ColorForm.resx">
+    <EmbeddedResource Include="Color Form\ColorForm.resx">
       <DependentUpon>ColorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageForm.resx">
+    <EmbeddedResource Include="Image Form\ImageForm.resx">
       <DependentUpon>ImageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PixelBackgroundForm.resx">
