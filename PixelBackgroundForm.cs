@@ -13,6 +13,7 @@ namespace PixelBackgroundGenerator
 	public partial class PixelBackgroundForm : Form
 	{
 		private PixelBackground _pixelBackground = new PixelBackground(1, 1);
+		private ColorDialog _colorDialog = new ColorDialog();
 
 		public PixelBackgroundForm()
 		{
@@ -21,7 +22,7 @@ namespace PixelBackgroundGenerator
 
 		private void chooseColorsButton_Click(object sender, EventArgs e)
 		{
-			ColorForm cf = new ColorForm(_pixelBackground);
+			ColorForm cf = new ColorForm(_pixelBackground, _colorDialog);
 			cf.Show();
 			
 			// An event to re-enable our choose colors button
@@ -47,11 +48,10 @@ namespace PixelBackgroundGenerator
 
 		private void borderColorButton_Click(object sender, EventArgs e)
 		{
-			ColorDialog cd = new ColorDialog();
-			if (cd.ShowDialog() == DialogResult.OK)
+			if (_colorDialog.ShowDialog() == DialogResult.OK)
 			{
-				borderColorButton.BackColor = cd.Color;
-				_pixelBackground.BorderColor = cd.Color;
+				borderColorButton.BackColor = _colorDialog.Color;
+				_pixelBackground.BorderColor = _colorDialog.Color;
 			}
 		}
 

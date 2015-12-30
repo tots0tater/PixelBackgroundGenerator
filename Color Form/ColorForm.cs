@@ -13,11 +13,13 @@ namespace PixelBackgroundGenerator
 	public partial class ColorForm : Form
 	{
 		private PixelBackground _pixelBackground;
+		private ColorDialog _colorDialog;
 
-		public ColorForm(PixelBackground pixelBackground)
+		public ColorForm(PixelBackground pixelBackground, ColorDialog colorDialog)
 		{
 			InitializeComponent();
 			_pixelBackground = pixelBackground;
+			_colorDialog = colorDialog;
 
 			// Setting our color box with colors we already have.
 			int i = 0;
@@ -43,21 +45,19 @@ namespace PixelBackgroundGenerator
 
 		private void colorButton_Click(object sender, EventArgs e)
 		{
-			ColorDialog cd = new ColorDialog();
-			if (cd.ShowDialog() == DialogResult.OK)
+			if (_colorDialog.ShowDialog() == DialogResult.OK)
 			{
-				// In case they want to replace a color they're on
+				// Removes the current color of the button. This replaces the color
 				_pixelBackground.RemoveColor((sender as Button).BackColor);
-				(sender as Button).BackColor = cd.Color;
+				// Then we add the color
+				_pixelBackground.AddColor(_colorDialog.Color);
+
+				(sender as Button).BackColor = _colorDialog.Color;
 			}
 		}
 
 		private void submitColorsButton_Click(object sender, EventArgs e)
 		{
-			foreach (Control c in colorPanel.Controls)
-				if (c.BackColor != Color.Transparent)
-					_pixelBackground.AddColor(c.BackColor);
-
 			this.Close();
 		}
 

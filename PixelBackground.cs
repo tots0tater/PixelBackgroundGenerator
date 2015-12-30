@@ -13,7 +13,7 @@ namespace PixelBackgroundGenerator
 	public class PixelBackground
 	{
 		int _x, _y;
-		private readonly HashSet<Color> _colors = new HashSet<Color>();
+		private readonly List<Color> _colors = new List<Color>();
 		private Color _borderColor = Color.Black;
 		private Bitmap _background;
 		int _squareSize = 1;
